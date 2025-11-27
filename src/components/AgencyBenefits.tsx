@@ -1,4 +1,4 @@
-import { MessageSquare, Video, FileText } from "lucide-react";
+import { MessageSquare, Target, FileText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const benefits = [
@@ -11,7 +11,7 @@ const benefits = [
     subtext: "Obtén respuestas inmediatas a tus preguntas y nunca te sientas abandonado con tu marketing."
   },
   {
-  id: "02",
+    id: "02",
     icon: Target,
     title: "Estrategias Personalizadas",
     titleHighlight: "Personalizadas",
@@ -37,7 +37,6 @@ const AgencyBenefits = () => {
             <span className="text-cta">No Más</span> Experiencias Frustrantes con Agencias
           </h2>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {benefits.map((benefit) => {
             const Icon = benefit.icon;
