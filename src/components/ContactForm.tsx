@@ -44,7 +44,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-20 bg-secondary">
+   <section id="contact" className="py-20 bg-secondary">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold font-montserrat mb-4 text-gray-950">
