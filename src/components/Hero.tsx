@@ -13,15 +13,17 @@ const Hero = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-background/30 to-background/20"></div>
       </div>
-
+      
       {/* Content */}
       <div className="container mx-auto px-4 z-10 pt-20">
         <div className="max-w-4xl">
-          <h1 className="font-montserrat text-5xl md:text-7xl font-black text-foreground mb-6 leading-tight">
+          <h1 className="font-montserrat text-5xl md:text-7xl font-black text-foreground mb-2 leading-tight">
             AGENCIA SEO MADRID.
-            <br />
-            <span className="text-foreground">POSICIONAMIENTO QUE CONVIERTE.</span>
           </h1>
+          <h2 className="font-montserrat text-4xl md:text-6xl font-black text-foreground mb-6 leading-tight">
+            POSICIONAMIENTO QUE CONVIERTE.
+          </h2>
+          
           <div className="mt-12">
             <Button variant="cta" size="lg" className="text-lg">
               SOLICITA TU AUDITORÍA GRATIS
