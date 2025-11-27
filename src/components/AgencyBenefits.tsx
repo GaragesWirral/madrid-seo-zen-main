@@ -11,12 +11,12 @@ const benefits = [
     subtext: "Obtén respuestas inmediatas a tus preguntas y nunca te sientas abandonado con tu marketing."
   },
   {
-    id: "02",
-    icon: Video,
-    title: "Llamadas Estratégicas Mensuales",
-    titleHighlight: "Estratégicas Mensuales",
-    description: "Nos reunimos contigo por video cada mes para revisar el rendimiento, discutir ajustes de estrategia y asegurar que tu marketing se alinea con tus objetivos comerciales.",
-    subtext: "Estas llamadas nos mantienen responsables y tu negocio en crecimiento."
+  id: "02",
+    icon: Target,
+    title: "Estrategias Personalizadas",
+    titleHighlight: "Personalizadas",
+    description: "Planes de SEO adaptados para Amazon, Local y éxito Web. Alineamos nuestros esfuerzos con tus objetivos para asegurar que tu marca destaque y crezca en su nicho.",
+    subtext: "Tu estrategia es única, diseñada específicamente para las necesidades de tu negocio."
   },
   {
     id: "03",
