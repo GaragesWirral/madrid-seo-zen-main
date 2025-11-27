@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10 pt-20">
         <div className="max-w-4xl">
           <h1 className="font-montserrat text-5xl md:text-7xl font-black text-foreground mb-6 leading-tight">
-            TU AGENCIA SEO EN MADRID.
+            AGENCIA SEO MADRID.
             <br />
             <span className="text-foreground">POSICIONAMIENTO QUE CONVIERTE.</span>
           </h1>
