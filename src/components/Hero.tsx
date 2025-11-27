@@ -25,7 +25,17 @@ const Hero = () => {
           </h2>
           
           <div className="mt-12">
-            <Button variant="cta" size="lg" className="text-lg">
+            <Button 
+              variant="cta" 
+              size="lg" 
+              className="text-lg"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+            >
               SOLICITA TU AUDITORÍA GRATIS
             </Button>
           </div>
