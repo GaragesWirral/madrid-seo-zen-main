@@ -1,9 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+
+  const services = [
+    { name: "Diseño Web", href: "#diseno-web" },
+    { name: "Posicionamiento SEO", href: "#posicionamiento-seo" },
+    { name: "Mantenimiento Web", href: "#mantenimiento-web" },
+    { name: "Google Ads", href: "#google-ads" }
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -27,16 +36,60 @@ const Navigation = () => {
             <a href="#home" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               AGENCIA SEO MADRID
             </a>
-            <a href="#posicionamiento" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              POSICIONAMIENTO
-            </a>
+            
+            {/* Services Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <button className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1">
+                SERVICIOS
+                <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isServicesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+                  {services.map((service) => (
+                    <a
+                      key={service.name}
+                      href={service.href}
+                      className="block px-4 py-3 text-sm font-medium text-foreground hover:bg-gray-50 hover:text-primary transition-colors"
+                    >
+                      {service.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <a href="#blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               BLOG
             </a>
-            <a href="#contacto" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a 
+              href="#contact" 
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('contact')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+            >
               CONTACTO
             </a>
-            <Button variant="cta" size="sm" className="text-sm py-2 px-6">
+            <Button 
+              variant="cta" 
+              size="sm" 
+              className="text-sm py-2 px-6"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+            >
               SOLICITA TU AUDITORÍA GRATIS
             </Button>
           </div>
@@ -56,16 +109,61 @@ const Navigation = () => {
             <a href="#home" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               HOME
             </a>
-            <a href="#posicionamiento" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              POSICIONAMIENTO
-            </a>
+            
+            {/* Mobile Services Dropdown */}
+            <div>
+              <button 
+                onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 w-full"
+              >
+                SERVICIOS
+                <ChevronDown className={`w-4 h-4 transition-transform ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isMobileServicesOpen && (
+                <div className="ml-4 mt-2 flex flex-col gap-2">
+                  {services.map((service) => (
+                    <a
+                      key={service.name}
+                      href={service.href}
+                      className="text-sm text-foreground hover:text-primary transition-colors py-1"
+                    >
+                      {service.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <a href="#blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               BLOG
             </a>
-            <a href="#contacto" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a 
+              href="#contact" 
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMenuOpen(false);
+                document.getElementById('contact')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+            >
               CONTACTO
             </a>
-            <Button variant="cta" size="sm" className="text-sm">
+            <Button 
+              variant="cta" 
+              size="sm" 
+              className="text-sm"
+              onClick={() => {
+                setIsMenuOpen(false);
+                document.getElementById('contact')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+            >
               SOLICITA TU AUDITORÍA GRATIS
             </Button>
           </div>
