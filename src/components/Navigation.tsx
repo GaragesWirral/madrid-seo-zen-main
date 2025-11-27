@@ -25,7 +25,7 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <a href="#home" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              HOME
+              AGENCIA SEO MADRID
             </a>
             <a href="#posicionamiento" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               POSICIONAMIENTO
