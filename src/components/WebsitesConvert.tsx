@@ -40,7 +40,17 @@ const WebsitesConvert = () => {
                 <span className="text-secondary-foreground">Diseño responsive perfecto en todos los dispositivos</span>
               </li>
             </ul>
-            <Button variant="cta">Solicita tu Consulta Gratuita</Button>
+            <Button 
+              variant="cta"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+            >
+              Solicita tu Consulta Gratuita
+            </Button>
           </div>
           <div className="relative">
             <div className="bg-gradient-to-br from-primary/20 to-cta/20 rounded-2xl overflow-hidden shadow-2xl">
