@@ -29,7 +29,6 @@ const Testimonials = () => {
           </h2>
           <div className="w-24 h-1 bg-cta mx-auto"></div>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="bg-white border-gray-200">
@@ -56,9 +55,17 @@ const Testimonials = () => {
             </Card>
           ))}
         </div>
-
         <div className="text-center">
-          <Button variant="cta" size="lg">
+          <Button 
+            variant="cta" 
+            size="lg"
+            onClick={() => {
+              document.getElementById('contact')?.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }}
+          >
             CONÓCENOS
           </Button>
         </div>
