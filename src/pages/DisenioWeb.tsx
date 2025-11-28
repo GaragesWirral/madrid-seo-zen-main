@@ -1,3 +1,4 @@
+
 // src/pages/DisenioWeb.tsx
 import Navigation from "@/components/Navigation";
 import ContactForm from "@/components/ContactForm";
@@ -5,41 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Smartphone, Zap, Palette, Code } from "lucide-react";
 
-// Add these imports for the carousel
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation as SwiperNavigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css'; // Core Swiper styles
-import 'swiper/css/navigation'; // Navigation arrows
-import 'swiper/css/pagination'; // Pagination bullets
-import 'swiper/css/autoplay'; // Autoplay module
-
 const DisenioWeb = () => {
-  // Sample portfolio data - replace with your real examples
-  const portfolioItems = [
-    {
-      title: "Ejemplo 1: Sitio E-commerce",
-      description: "Un tienda en línea moderna y responsive.",
-      image: "/images/portfolio/example1.jpg", // Path to your image
-      link: "https://example1.com"
-    },
-    {
-      title: "Ejemplo 2: Portfolio Creativo",
-      description: "Diseño minimalista para artistas.",
-      image: "/images/portfolio/example2.jpg",
-      link: "https://example2.com"
-    },
-    {
-      title: "Ejemplo 3: Landing Page Corporativa",
-      description: "Página optimizada para conversiones.",
-      image: "/images/portfolio/example3.jpg",
-      link: "https://example3.com"
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-
+      
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center pt-20 bg-gradient-to-br from-primary/10 to-cta/10">
         <div className="container mx-auto px-4 z-10">
@@ -115,66 +86,6 @@ const DisenioWeb = () => {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* New Portfolio Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-gray-950 mb-4">
-              Ejemplos de Nuestro <span className="text-cta">Trabajo</span>
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Descubre algunos de nuestros proyectos destacados
-            </p>
-          </div>
-
-          <Swiper
-            modules={[SwiperNavigation, Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="max-w-6xl mx-auto"
-          >
-            {portfolioItems.map((item, index) => (
-              <SwiperSlide key={index}>
-                <Card className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300">
-                  <CardContent className="p-0">
-                    <img 
-                      src={item.image} 
-                      alt={item.title} 
-                      className="w-full h-48 object-cover rounded-t-lg" 
-                      loading="lazy"
-                    />
-                    <div className="p-6 text-center">
-                      <h3 className="font-montserrat text-xl font-bold text-gray-950 mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-700 mb-4">
-                        {item.description}
-                      </p>
-                      <Button 
-                        variant="outline" 
-                        asChild
-                      >
-                        <a href={item.link} target="_blank" rel="noopener noreferrer">
-                          Ver Sitio
-                        </a>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </SwiperSlide>
-            ))}
-          </Swiper>
         </div>
       </section>
 
