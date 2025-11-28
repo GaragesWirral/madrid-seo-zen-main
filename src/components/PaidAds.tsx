@@ -31,7 +31,17 @@ const PaidAds = () => {
                 <span>Optimización continua basada en datos reales</span>
               </li>
             </ul>
-            <Button variant="cta">Lanza tu Primera Campaña</Button>
+            <Button 
+              variant="cta"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+            >
+              Lanza tu Primera Campaña
+            </Button>
           </div>
           <div>
             <img 
