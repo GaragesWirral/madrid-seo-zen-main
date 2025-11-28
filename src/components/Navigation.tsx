@@ -8,10 +8,10 @@ const Navigation = () => {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
   const services = [
-    { name: "Diseño Web", href: "#diseno-web" },
-    { name: "Posicionamiento SEO", href: "#posicionamiento-seo" },
-    { name: "Mantenimiento Web", href: "#mantenimiento-web" },
-    { name: "Google Ads", href: "#google-ads" }
+    { name: "Diseño Web", href: "/diseno-web" },
+    { name: "Posicionamiento SEO", href: "/posicionamiento-seo" },
+    { name: "Mantenimiento Web", href: "/mantenimiento-web" },
+    { name: "Google Ads", href: "/google-ads" }
   ];
 
   return (
