@@ -39,7 +39,7 @@ const Navigation = () => {
             
             {/* Services Dropdown */}
             <div 
-              className="relative"
+              className="relative group"
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
@@ -49,12 +49,12 @@ const Navigation = () => {
               </button>
               
               {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
                   {services.map((service) => (
                     <a
                       key={service.name}
                       href={service.href}
-                      className="block px-4 py-3 text-sm font-medium text-foreground hover:bg-gray-50 hover:text-primary transition-colors"
+                      className="block px-4 py-3 text-sm font-medium text-gray-900 hover:bg-cta/10 hover:text-cta transition-colors"
                     >
                       {service.name}
                     </a>
