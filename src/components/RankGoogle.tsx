@@ -2,26 +2,37 @@ import { TrendingUp, Search, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import seoRankingImage from "@/assets/seo-ranking-improvement.jpg";
-const benefits = [{
-  icon: Search,
-  title: "SEO Técnico",
-  description: "Optimización completa de tu sitio web para los motores de búsqueda"
-}, {
-  icon: TrendingUp,
-  title: "Contenido Optimizado",
-  description: "Estrategia de contenidos que atrae y convierte"
-}, {
-  icon: Target,
-  title: "Keywords Locales",
-  description: "Dominamos las búsquedas locales de tu área"
-}];
+
+const benefits = [
+  {
+    icon: Search,
+    title: "SEO Técnico",
+    description: "Optimización completa de tu sitio web para los motores de búsqueda"
+  },
+  {
+    icon: TrendingUp,
+    title: "Contenido Optimizado",
+    description: "Estrategia de contenidos que atrae y convierte"
+  },
+  {
+    icon: Target,
+    title: "Keywords Locales",
+    description: "Dominamos las búsquedas locales de tu área"
+  }
+];
+
 const RankGoogle = () => {
-  return <section className="py-24 bg-secondary">
+  return (
+    <section className="py-24 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="order-2 lg:order-1">
             <div className="bg-gradient-to-br from-primary/20 to-cta/20 rounded-2xl overflow-hidden shadow-2xl">
-              <img src={seoRankingImage} alt="Comparación antes y después del ranking SEO local mostrando mejora de posición 15 a posición 2" className="w-full h-auto" />
+              <img 
+                src={seoRankingImage} 
+                alt="Comparación antes y después del ranking SEO local mostrando mejora de posición 15 a posición 2" 
+                className="w-full h-auto" 
+              />
             </div>
           </div>
           
@@ -34,7 +45,8 @@ const RankGoogle = () => {
             </p>
             
             <div className="space-y-6 mb-8">
-              {benefits.map((benefit, index) => <div key={index} className="flex items-start gap-4">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-cta/10 flex items-center justify-center flex-shrink-0">
                     <benefit.icon className="w-6 h-6 text-cta" strokeWidth={2} />
                   </div>
@@ -46,13 +58,26 @@ const RankGoogle = () => {
                       {benefit.description}
                     </p>
                   </div>
-                </div>)}
+                </div>
+              ))}
             </div>
             
-            <Button variant="cta">Mejora tu Posicionamiento Ahora</Button>
+            <Button 
+              variant="cta"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+            >
+              Mejora tu Posicionamiento Ahora
+            </Button>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default RankGoogle;
